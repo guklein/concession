@@ -49,17 +49,28 @@ class ClienteController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $cliente = Cliente::findOrFail($id);
+        return view('clientes.edit', compact('cliente'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        //
+       $cliente = Cliente::findOrFail($id);
+
+       $cliente->nome = $request->input('nome');
+       $cliente->email = $request->input('email');
+       $cliente->telefone = $request->input('telefone');
+       $cliente->endereco = $request->input('endereco');
+       $cliente->cpf = $request->input('cpf');
+
+       $cliente->save();
+
+       return redirect()->route('clientes.index');
     }
 
     /**
