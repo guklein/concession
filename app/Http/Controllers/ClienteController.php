@@ -43,7 +43,8 @@ class ClienteController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $cliente = Cliente::findOrFail($id);
+        return view('clientes.show', compact('cliente'));
     }
 
     /**
