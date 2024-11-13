@@ -37,7 +37,7 @@ class VendedorController extends Controller
         ]);
 
         $vendedor->save();
-        return redirect()->route('vendedor.index');
+        return redirect()->route('vendedores.index');
     }
 
     /**
@@ -45,7 +45,8 @@ class VendedorController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $vendedor = Vendedor::findOrFail($id);
+        return view('vendedores.show', compact('vendedor'));
     }
 
     /**
@@ -60,7 +61,7 @@ class VendedorController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
         $vendedor = Vendedor::findOrFail($id);
 
@@ -78,6 +79,9 @@ class VendedorController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $vendedor = Vendedor::findOrFail($id);
+
+        $vendedor->delete();
+        return redirect()->route('vendedores.index');
     }
 }

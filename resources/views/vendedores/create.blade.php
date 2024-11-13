@@ -1,26 +1,32 @@
-<body>
-    <div class="container">
-        <h1>Novo Vendedor</h1>
-            <form action="{{ route('vendedor.store') }}" method="POST">
-                <!-- Token CSRF para proteção contra ataques CSRF -->
-                    @csrf
-                <div class="form-group">
-                    <label for="nome">Nome:</label>
-                    <input type="text" name="nome">
-                </div>
+<x-app-layout>
+    <header>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </header> 
+  <body>
+        <div class="container">
+            <h1>Novo Vendedor</h1>
+                <form action="{{ route('vendedores.store') }}" method="POST">
+                    <!-- Token CSRF para proteção contra ataques CSRF -->
+                        @csrf
+                    <div class="form-group">
+                        <label for="nome">Nome:</label>
+                        <input type="text" name="nome">
+                    </div>
 
-                <div class="form-group">
-                    <label for="telefone">telefone:</label>
-                    <input type="text" name="telefone">
-                </div>
+                    <div class="form-group">
+                        <label for="telefone">telefone:</label>
+                        <input type="text" name="telefone">
+                    </div>
 
-                <div class="form-group">
-                    <label for="endereco">Endereço:</label>
-                    <input type="text" name="endereco">
-                </div>
+                    <div class="form-group">
+                        <label for="endereco">Endereço:</label>
+                        <input type="text" name="endereco">
+                    </div>
 
-                    <button type="submit" class="btn btn-success">Salvar</button>
-                    <a href="{{ route('vendedores.index') }}" class="btn btn-secondary">Cancelar</a>
-            </form>
-    </div>
-</body>
+                        <button type="submit" class="btn btn-success">Salvar</button>
+                        <a href="{{ route('vendedores.index') }}" class="btn btn-secondary">Cancelar</a>
+                </form>
+        </div>
+    </body>
+</x-app-layout>
