@@ -4,27 +4,27 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     </header> 
   <body>
-        <div class="container">
-            <h1>Novo Vendedor</h1>
-                <form action="{{ route('vendedores.store') }}" method="POST">
+        <div class="mb-3">
+            <h3 class="form dark:text-gray-200">Novo Vendedor</h3>
+                <form class="form-label dark:text-gray-200" action="{{ route('vendedores.store') }}" method="POST">
                     <!-- Token CSRF para proteção contra ataques CSRF -->
                         @csrf
                     <div class="form-group">
                         <label for="nome">Nome:</label>
-                        <input type="text" name="nome">
+                        <input class="form-control form-control-lg" type="text" name="nome">
                     </div>
 
                     <div class="form-group">
                         <label for="telefone">telefone:</label>
-                        <input type="text" name="telefone">
+                        <input class="form-control form-control-lg" type="text" name="telefone">
                     </div>
 
                     <div class="form-group">
                         <label for="endereco">Endereço:</label>
-                        <input type="text" name="endereco">
+                        <input class="form-control form-control-lg" type="text" name="endereco">
                     </div>
-
-                        <button type="submit" class="btn btn-success">Salvar</button>
+                        <br>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
                         <a href="{{ route('vendedores.index') }}" class="btn btn-secondary">Cancelar</a>
                 </form>
         </div>
