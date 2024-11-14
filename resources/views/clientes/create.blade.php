@@ -5,27 +5,27 @@
     </header>
     <body>
         <div class="mb-3">
-            <h1 class="form dark:text-gray-200">Novo Cliente</h1>
-                <form action="{{ route('clientes.store') }}" method="POST">
+            <h3 class="form dark:text-gray-200">Novo Cliente</h3>
+                <form class="form-label dark:text-gray-200" action="{{ route('clientes.store') }}" method="POST">
                     <!-- Token CSRF para proteção contra ataques CSRF -->
                         @csrf
-                    <div class="form-label dark:text-gray-200">
+                    <div>
                         <label for="nome">Nome:</label>
                         <input class="form-control form-control-lg" type="text" name="nome">
                     </div>
-                    <div class="form-label dark:text-gray-200">
+                    <div>
                         <label class="form-label" for="email">Email:</label>
                         <input type="email" class="form-control form-control-lg" placeholder="nome@mail.com" name="email">
                     </div>
-                    <div class="form-label dark:text-gray-200">
+                    <div>
                         <label  class="form-label" for="telefone">Telefone:</label>
                         <input class="form-control form-control-lg" type="text" name="telefone">
                     </div>
-                    <div class="form-label dark:text-gray-200">
+                    <div>
                         <label for="endereco">Endereço:</label>
                         <input class="form-control form-control-lg" type="text" name="endereco">
                     </div>
-                    <div class="form-label dark:text-gray-200">
+                    <div>
                         <label for="cpf">Cpf:</label>
                         <input class="form-control form-control-lg" type="text" name="cpf">
                     </div>

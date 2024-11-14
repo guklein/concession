@@ -66,7 +66,7 @@ class VendedorController extends Controller
         $vendedor = Vendedor::findOrFail($id);
 
         $vendedor->nome = $request->input('nome');
-        $vendedor->email = $request->input('endereco');
+        $vendedor->endereco = $request->input('endereco');
         $vendedor->telefone = $request->input('telefone');
  
         $vendedor->save();
