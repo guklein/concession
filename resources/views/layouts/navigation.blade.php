@@ -10,15 +10,35 @@
                     </a>
                 </div>
 
+                <div class="shrink-0 flex items-center">
+                    <a href="{{ route('clientes.index') }}">
+
+                    </a>
+                </div>
+
+                <div class="shrink-0 flex items-center">
+                    <a href="{{ route('vendedores.index') }}">
+
+                    </a>
+                </div>
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
-                    </x-nav-link>
-                    
+                    </x-nav-link>                    
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('clientes.index')" :active="request()->routeIs('clientes')">
+                        {{ __('Clientes') }}
+                    </x-nav-link>                    
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('vendedores.index')" :active="request()->routeIs('vendedores')">
+                        {{ __('Vendedores') }}
+                    </x-nav-link>                    
                 </div>
             </div>
-
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <x-dropdown align="right" width="48">
@@ -71,6 +91,7 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+
         </div>
 
         <!-- Responsive Settings Options -->
