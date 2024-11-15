@@ -20,7 +20,7 @@
             
                 <tr>
                     <td class="colunas">{{$marca->id}}</td>
-                    <td id="marca">{{$marca->marca}}</td>
+                    <td id="marca">{{$marca->marcas}}</td>
                     <td>
                         <a href="{{ route('marcas.show', $marca->id)}}" class="btn btn-info">Detalhes</a>
                         <a href="{{ route('marcas.edit', $marca->id)}}" class="btn btn-info">Editar</a>
