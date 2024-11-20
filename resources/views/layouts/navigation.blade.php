@@ -38,6 +38,13 @@
                         {{ __('Vendedores') }}
                     </x-nav-link>                    
                 </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users')">
+                        {{ __('Usuarios') }}
+                    </x-nav-link>                    
+                </div>
+
             </div>
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ms-6">
@@ -96,6 +103,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('vendedores.index')" :active="request()->routeIs('vendedores')">
                 {{ __('Vendedores') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users')">
+                {{ __('Usuarios') }}
             </x-responsive-nav-link>
 
 

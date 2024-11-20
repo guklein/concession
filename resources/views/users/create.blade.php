@@ -5,27 +5,27 @@
     </header> 
   <body>
         <div class="mb-3">
-            <h3 class="form dark:text-gray-200">Novo Veiculo</h3>
-                <form class="form-label dark:text-gray-200" action="{{ route('veiculos.store') }}" method="POST">
+            <h3 class="form dark:text-gray-200">Novo Usuario</h3>
+                <form class="form-label dark:text-gray-200" action="{{ route('users.store') }}" method="POST">
                     <!-- Token CSRF para proteção contra ataques CSRF -->
                         @csrf
                     <div class="form-group">
-                        <label for="modelo">Modelo:</label>
-                        <input class="form-control form-control-lg" type="text" name="modelo">
+                        <label for="name">Nome:</label>
+                        <input class="form-control form-control-lg" type="text" name="name">
                     </div>
 
                     <div class="form-group">
-                        <label for="kmrodado">Km Rodado:</label>
-                        <input class="form-control form-control-lg" type="text" name="kmrodado">
+                        <label for="email">Email:</label>
+                        <input class="form-control form-control-lg" type="text" name="email">
                     </div>
 
                     <div class="form-group">
-                        <label for="valor">Valor:</label>
-                        <input class="form-control form-control-lg" type="text" name="valor">
+                        <label for="password">Senha:</label>
+                        <input class="form-control form-control-lg" type="password" name="password">
                     </div>
                         <br>
                         <button type="submit" class="btn btn-primary">Salvar</button>
-                        <a href="{{ route('veiculos.index') }}" class="btn btn-secondary">Cancelar</a>
+                        <a href="{{ route('users.index') }}" class="btn btn-secondary">Cancelar</a>
                 </form>
         </div>
     </body>
