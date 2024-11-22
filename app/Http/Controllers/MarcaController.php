@@ -78,6 +78,6 @@ class MarcaController extends Controller
         $marca = Marca::findOrFail($id);
 
         $marca->delete();
-        return redirect()->route('marca.index');
+        return redirect()->route('marcas.index');
     }
 }

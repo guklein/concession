@@ -24,7 +24,7 @@ Route::middleware('auth')->group(function () {
 
 Route::resource('clientes', ClienteController::class);
 Route::resource('vendedores', VendedorController::class);
-//Route::resource('marcas', MarcaController::class);
+Route::resource('marcas', MarcaController::class);
 Route::resource('veiculos', VeiculoController::class);
 Route::resource('users', UserController::class);
 

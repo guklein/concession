@@ -10,7 +10,7 @@
                     <!-- Token CSRF para proteção contra ataques CSRF -->
                         @csrf
                     <div class="form-group">
-                        <label for="nome">Marca:</label>
+                        <label for="marca">Marca:</label>
                         <input class="form-control form-control-lg" type="text" name="marca">
                     </div>
 
