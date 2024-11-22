@@ -11,7 +11,7 @@
             <tr>
                 <th scope="col">Id</th>
                 <th scope="col">Marca</th>
-
+                <th scope="col"></th>
                 
             </tr>
         </thead>
@@ -20,7 +20,7 @@
             
                 <tr>
                     <td class="colunas">{{$marca->id}}</td>
-                    <td id="marca">{{$marca->marcas}}</td>
+                    <td id="marca">{{$marca->marca}}</td>
                     <td>
                         <a href="{{ route('marcas.show', $marca->id)}}" class="btn btn-info">Detalhes</a>
                         <a href="{{ route('marcas.edit', $marca->id)}}" class="btn btn-info">Editar</a>
