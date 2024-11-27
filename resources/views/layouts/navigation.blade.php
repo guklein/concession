@@ -40,6 +40,18 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('marcas.index')" :active="request()->routeIs('marcas')">
+                        {{ __('Marcas') }}
+                    </x-nav-link>                    
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('veiculos.index')" :active="request()->routeIs('veiculos')">
+                        {{ __('Veiculos') }}
+                    </x-nav-link>                    
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('users.index')" :active="request()->routeIs('users')">
                         {{ __('Usuarios') }}
                     </x-nav-link>                    
@@ -104,9 +116,16 @@
             <x-responsive-nav-link :href="route('vendedores.index')" :active="request()->routeIs('vendedores')">
                 {{ __('Vendedores') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('marcas.index')" :active="request()->routeIs('marcas')">
+                {{ __('Marcas') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('veiculos.index')" :active="request()->routeIs('veiculos')">
+                {{ __('Veiculos') }}
+            </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users')">
                 {{ __('Usuarios') }}
             </x-responsive-nav-link>
+
 
 
         </div>
