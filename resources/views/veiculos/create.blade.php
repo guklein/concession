@@ -23,6 +23,15 @@
                         <label for="valor">Valor:</label>
                         <input class="form-control form-control-lg" type="text" name="valor">
                     </div>
+                    <div class="form-group">
+                        <label  for="marca_id">Marca:</label>
+                        <select class="form-control form-control-lg" name="marca_id" class="form-control">
+                            @foreach ($marcas as $marca)
+                                <option value="{{ $marca->id  
+                            }}">{{ $marca->marca }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                         <br>
                         <button type="submit" class="btn btn-primary">Salvar</button>
                         <a href="{{ route('veiculos.index') }}" class="btn btn-secondary">Cancelar</a>

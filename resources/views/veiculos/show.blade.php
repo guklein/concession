@@ -29,6 +29,11 @@
                     <span class="info dark:text-gray-200">{{ $veiculo->valor}}</span>
                 </div>
 
+                <div class="meta">
+                    <span class="label dark:text-gray-200">Marca:</span>
+                    <span class="info dark:text-gray-200">{{ $veiculoMarca[marca]}}</span>
+                </div>
+
                 <br>
             </div>
             <a href="{{ route('veiculos.index')}}" class="btn btn-secondary">Voltar</a>

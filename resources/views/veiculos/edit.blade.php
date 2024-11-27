@@ -9,7 +9,6 @@
             <form method="POST" action="{{ route('veiculos.update', $veiculo->id)}}">
                 @csrf
                 @method('PUT')
-
                 <div class="form-label">
                     <label class="form-label" for="modelo">Modelo:</label>
                     <input type="text" id="modelo" name="modelo" value="{{ old('modelo', $veiculo->modelo)}}" class="form-control form-control-lg form-input">
@@ -23,6 +22,14 @@
                 <div class="form-group">
                     <label class="form-label" for="valor">Valor:</label>
                     <input  name="valor" class="form-control form-control-lg form-input" value="{{ old('valor', $veiculo->valor)}}">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="marca_id">Marca:</label>
+                    <select name="marca_id" class="form-control">
+                        @foreach ($marcas as $marca)
+                            <option value="{{ $marca->id }}" {{ $marca->id == $veiculo->marca_id ? 'selected' : '' }}>{{ $marca->marca }}</option>
+                        @endforeach
+                    </select>
                 </div>
                     <br>
                 <div class="form-actions">

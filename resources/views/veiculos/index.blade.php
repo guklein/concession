@@ -13,6 +13,7 @@
                 <th scope="col">Modelo</th>
                 <th scope="col">Km Rodado</th>
                 <th scope="col">Valor</th>
+                <th scope="col">Marca</th>
                 <th scope="col"></th>
                 
             </tr>
@@ -25,6 +26,7 @@
                     <td id="modelo">{{$veiculo->modelo}}</td>
                     <td id="kmrodado">{{$veiculo->kmrodado}}</td>
                     <td id="endereco">{{$veiculo->valor}}</td>
+                    <td id="marca">{{$veiculo->marca->marca}}</td>
                     <td>
                         <a href="{{ route('veiculos.show', $veiculo->id)}}" class="btn btn-info">Detalhes</a>
                         <a href="{{ route('veiculos.edit', $veiculo->id)}}" class="btn btn-info">Editar</a>

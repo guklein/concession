@@ -9,4 +9,9 @@ class Marca extends Model
 {
     protected $table = 'marcas';
     protected $fillable = ['marca']; 
+
+    public function veiculos()
+       {
+           return $this->hasMany(Veiculo::class);
+       }
 }

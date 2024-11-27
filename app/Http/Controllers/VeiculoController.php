@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Veiculo;
+use App\Models\Marca;
 
 class VeiculoController extends Controller
 {
@@ -17,49 +18,51 @@ class VeiculoController extends Controller
 
     public function create()
     {
-        return view('veiculos.create');
+        $marcas = Marca::all();
+        return view('veiculos.create', compact('marcas'));
+
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        $veiculo = new Veiculo([
-            'modelo' => $request->input('modelo'),
-            'kmrodado' => $request->input('kmrodado'),
-            'valor' => $request->input('valor'),
+        $request->validate([
+            'modelo' => 'required',
+            'kmrodado' => 'required|numeric',
+            'valor' => 'required|numeric',
+            'marca_id' => 'required|integer', 
         ]);
-
-        $veiculo->save();
+    
+        $veiculo = Veiculo::create($request->all());
+    
         return redirect()->route('veiculos.index');
     }
 
     public function show(string $id)
     {
         $veiculo = Veiculo::findOrFail($id);
-        return view('veiculos.show', compact('veiculo'));
+        $veiculoMarca = $veiculo->marca;
+
+        return view('veiculos.show', compact('veiculoMarca'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+ 
+    public function edit(Veiculo $veiculo)
     {
-        $veiculo = Veiculo::findOrFail($id);
-        return view('veiculos.edit', compact('veiculo'));
+        $marcas = Marca::all(); 
+        return view('veiculos.edit', compact('veiculo', 'marcas'));
     }
 
     public function update(Request $request, $id)
     {
         $veiculo = Veiculo::findOrFail($id);
-
+    
         $veiculo->modelo = $request->input('modelo');
         $veiculo->kmrodado = $request->input('kmrodado');
         $veiculo->valor = $request->input('valor');
- 
+        $veiculo->marca_id = $request->input('marca_id'); 
+    
         $veiculo->save();
- 
+    
         return redirect()->route('veiculos.index');
     }
 
