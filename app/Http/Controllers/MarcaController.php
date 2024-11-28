@@ -22,6 +22,8 @@ class MarcaController extends Controller
      */
     public function create()
     {
+
+
         return view('marcas.create');
     }
 
@@ -30,12 +32,17 @@ class MarcaController extends Controller
      */
     public function store(Request $request)
     {
-        $marca = new Marca([
-            'marca' => $request->input('marca')
-        ]);
+        $messages = [
+            'marca.required' => 'É necessario preencher a Marca'
+        ];
 
-        $marca->save();
-        return redirect()->route('marcas.index');
+        $request->validate([
+            'marca'=> 'required|string'
+        ],$messages); 
+
+        Marca::create($request->all());
+    
+        return redirect()->route('marcas.index')->with('sucess', 'Marca criada com sucesso');
     }
 
     /**

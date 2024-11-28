@@ -19,7 +19,7 @@
                     </div>
                     <div>
                         <label  class="form-label" for="telefone">Telefone:</label>
-                        <input class="form-control form-control-lg" type="text" name="telefone">
+                        <input class="form-control form-control-lg" type="text" placeholder="(xx)xxxxx-xxxx " name="telefone">
                     </div>
                     <div>
                         <label for="endereco">Endereço:</label>
@@ -27,7 +27,7 @@
                     </div>
                     <div>
                         <label for="cpf">Cpf:</label>
-                        <input class="form-control form-control-lg" type="text" name="cpf">
+                        <input placeholder="000.000.000-00" class="form-control form-control-lg" type="text" name="cpf">
                     </div>
 
                         <button type="submit" class="btn btn-primary">Salvar</button>

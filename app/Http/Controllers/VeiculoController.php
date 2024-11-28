@@ -25,12 +25,18 @@ class VeiculoController extends Controller
 
     public function store(Request $request)
     {
+        $messages=[
+            'modelo.required' => 'É necessario preecnher o Modelo do Veiculo',
+            'kmrodado.required' => 'É necessario preecnher Quantos KM rodados',
+            'valor.required' => 'É necessario preecnher o Valor do Veiculo',
+            'marca_id.required' => 'É necessario selecionar Marca do Veiculo'
+        ];
         $request->validate([
             'modelo' => 'required',
             'kmrodado' => 'required|numeric',
             'valor' => 'required|numeric',
             'marca_id' => 'required|integer', 
-        ]);
+        ],$messages);
     
         $veiculo = Veiculo::create($request->all());
     

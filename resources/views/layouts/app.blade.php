@@ -10,7 +10,7 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
-
+        
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
@@ -28,6 +28,24 @@
             @endisset
 
             <!-- Page Content -->
+            <!-- Mensagens de interação com o cliente-->
+            @if ($errors->any())
+                <div role="alert">
+                    @foreach ($errors->all() as $error)
+                        <div class="bg-red-100 border-red-400 text-red-700 px-4 py-3 rounded relative mb-2">
+                            <strong class="font-bold">Erro!</strong>
+                            <span class="block sm:inline">{{$error}}</span>
+                        </div>
+                    @endforeach
+                </div>
+            @endif
+
+            @if(session('sucess'))
+                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative"role="alert">
+                    <strong class="font-bold">Sucesso!</strong>
+                    <span class="block sm:inline">{{ session('sucess') }}</span>
+                </div>
+            @endif
             <main>
                 {{ $slot }}
             </main>
