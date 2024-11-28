@@ -29,13 +29,15 @@ class VeiculoController extends Controller
             'modelo.required' => 'É necessario preecnher o Modelo do Veiculo',
             'kmrodado.required' => 'É necessario preecnher Quantos KM rodados',
             'valor.required' => 'É necessario preecnher o Valor do Veiculo',
-            'marca_id.required' => 'É necessario selecionar Marca do Veiculo'
+            'marca_id.required' => 'É necessario selecionar Marca do Veiculo',
+            'kmrodado.numeric'=> 'Campo Km Rodado tem que ser Numerico',
+            'valor.numeric'=> 'Campo Valor tem que ser Numerico'
         ];
         $request->validate([
             'modelo' => 'required',
             'kmrodado' => 'required|numeric',
             'valor' => 'required|numeric',
-            'marca_id' => 'required|integer', 
+            'marca_id' => 'required', 
         ],$messages);
     
         $veiculo = Veiculo::create($request->all());

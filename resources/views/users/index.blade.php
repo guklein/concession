@@ -12,7 +12,7 @@
                 <th scope="col">Id</th>
                 <th scope="col">Nome</th>
                 <th scope="col">Email</th>
-                <th scope="col">Senha</th>
+                <th scope="col" mask="password">Senha</th>
                 <th scope="col"></th>
                 
             </tr>
@@ -24,7 +24,7 @@
                     <td class="colunas">{{$user->id}}</td>
                     <td id="nome">{{$user->name}}</td>
                     <td id="email">{{$user->email}}</td>
-                    <td id="senha">{{$user->password}}</td>
+                    <td mask="password" id="senha">{{$user->password}}</td>
                     <td>
                         <a href="{{ route('users.show', $user->id)}}" class="btn btn-info">Detalhes</a>
                         <a href="{{ route('users.edit', $user->id)}}" class="btn btn-info">Editar</a>
