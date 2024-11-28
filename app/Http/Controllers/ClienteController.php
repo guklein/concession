@@ -31,14 +31,15 @@ class ClienteController extends Controller
             'telefone.required' => 'É necessario preencher o Telefone',
             'endereco.required' => 'É necessario preencher o Endereço',
             'email.required' => 'É necessario preencher o E-mail',
-            'cpf.required' => 'É necessario preencher o CPF'        
+            'cpf.required' => 'É necessario preencher o CPF',
+            'email.unique' => 'E-mail já cadastrado'        
         ];
 
         $request->validate([
             'nome' => 'required|string',
             'telefone' => 'required|string',
             'endereco' => 'required|string',
-            'email' => 'required|string',
+            'email' => 'required|string|unique:clientes',
             'cpf' => 'required|string'
         ],$messages);
     
