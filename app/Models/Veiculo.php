@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Veiculo extends Model
 {
     protected $table = 'veiculos';
-    protected $fillable = ['modelo', 'kmrodado', 'valor', 'marca_id']; // Adicione 'marca_id'
+    protected $fillable = ['modelo', 'kmrodado', 'valor', 'marca_id'];
 
     public function marca()
     {
