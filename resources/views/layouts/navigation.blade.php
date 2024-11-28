@@ -52,6 +52,12 @@
                 </div>
 
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('vendas.index')" :active="request()->routeIs('vendas')">
+                        {{ __('Vendas') }}
+                    </x-nav-link>                    
+                </div>
+
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                     <x-nav-link :href="route('users.index')" :active="request()->routeIs('users')">
                         {{ __('Usuarios') }}
                     </x-nav-link>                    
@@ -121,6 +127,9 @@
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('veiculos.index')" :active="request()->routeIs('veiculos')">
                 {{ __('Veiculos') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('vendas.index')" :active="request()->routeIs('vendas')">
+                {{ __('Vendas') }}
             </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('users.index')" :active="request()->routeIs('users')">
                 {{ __('Usuarios') }}
