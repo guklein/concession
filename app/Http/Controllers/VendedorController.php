@@ -24,14 +24,20 @@ class VendedorController extends Controller
 
     public function store(Request $request)
     {
-        $vendedor = new Vendedor([
-            'nome' => $request->input('nome'),
-            'telefone' => $request->input('telefone'),
-            'endereco' => $request->input('endereco'),
-        ]);
+                $messages = [
+            'nome.required' => 'É necessario preencher o Nome',
+            'telefone.required' => 'É necessario preencher o Telefone',
+            'endereco.required' => 'É necessario preencher o Endereço'
+        ];
 
-        $vendedor->save();
-        return redirect()->route('vendedores.index');
+        $request->validate([
+            'nome' => 'required|string',
+            'telefone' => 'required|string',
+            'endereco' => 'required|string',
+        ],$messages);
+
+        Vendedor::create($request->all());
+        return redirect()->route('vendedores.index')->with('sucess', 'Vendedor criado com sucesso');
     }
 
 

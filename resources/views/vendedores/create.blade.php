@@ -16,7 +16,7 @@
 
                     <div class="form-group">
                         <label for="telefone">telefone:</label>
-                        <input class="form-control form-control-lg" type="text" name="telefone">
+                        <input placeholder="(xx)xxxxx-xxxx" class="form-control form-control-lg" type="text" name="telefone">
                     </div>
 
                     <div class="form-group">

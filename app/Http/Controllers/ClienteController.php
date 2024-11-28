@@ -26,16 +26,25 @@ class ClienteController extends Controller
 
     public function store(Request $request)
     {
-        $cliente = new Cliente([
-            'nome' => $request->input('nome'),
-            'telefone' => $request->input('telefone'),
-            'endereco' => $request->input('endereco'),
-            'email' => $request->input('email'),
-            'cpf' => $request->input('cpf')
-        ]);
+        $messages = [
+            'nome.required' => 'É necessario preencher o Nome do cliente',
+            'telefone.required' => 'É necessario preencher o Telefone',
+            'endereco.required' => 'É necessario preencher o Endereço',
+            'email.required' => 'É necessario preencher o E-mail',
+            'cpf.required' => 'É necessario preencher o CPF'        
+        ];
 
-        $cliente->save();
-        return redirect()->route('clientes.index');
+        $request->validate([
+            'nome' => 'required|string',
+            'telefone' => 'required|string',
+            'endereco' => 'required|string',
+            'email' => 'required|string',
+            'cpf' => 'required|string'
+        ],$messages);
+    
+        Cliente::create($request->all());
+        
+        return redirect()->route('clientes.index')->with('sucess', 'Cliente cadastrado com sucesso');
     }
 
     /**

@@ -26,8 +26,9 @@
                     <div class="form-group">
                         <label  for="marca_id">Marca:</label>
                         <select class="form-control form-control-lg" name="marca_id" class="form-control">
+                            <option value="Selecione">Selecione...</option>
                             @foreach ($marcas as $marca)
-                                <option value="{{ $marca->id  
+                                <option {{ $marca->id  
                             }}">{{ $marca->marca }}</option>
                             @endforeach
                         </select>

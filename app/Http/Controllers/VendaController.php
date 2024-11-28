@@ -26,6 +26,18 @@ class VendaController extends Controller
 
     public function store(Request $request)
     {
+        $messages=[
+            'cliente_id' => 'É necessario selecionar um Cliete',
+            'veiculo_id' => 'É necessario selecionar um Veiculo',
+            'vendedor_id' => 'É necessario selecionar um Vendedor'
+        ];
+
+        $request->validate([
+            'cliente_id' => 'required|int',
+            'veiculo_id' => 'required|int',
+            'vendedor_id' => 'required|int'
+        ],$messages);
+
         $venda = Venda::create([
             'cliente_id' => $request->cliente_id,
             'veiculo_id' => $request->veiculo_id,

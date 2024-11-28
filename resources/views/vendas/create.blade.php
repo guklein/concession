@@ -12,6 +12,7 @@
                         <div class="form-group">
                             <label  for="cliente_id">Cliente:</label>
                             <select class="form-control form-control-lg" name="cliente_id" class="form-control">
+                                <option value="cliente">Selecione um Cliente</option>
                                 @foreach ($clientes as $cliente)
                                     <option value="{{ $cliente->id  
                                 }}">{{ $cliente->nome }}</option>
@@ -21,6 +22,7 @@
                         <div class="form-group">
                             <label  for="vendedor_id">Vendedor:</label>
                             <select class="form-control form-control-lg" name="vendedor_id" class="form-control">
+                                <option value="vendededor">Selecione um Vendedor</option>
                                 @foreach ($vendedores as $vendedor)
                                     <option value="{{ $vendedor->id  
                                 }}">{{ $vendedor->nome }}</option>
@@ -30,6 +32,7 @@
                         <div class="form-group">
                             <label  for="veiculo_id">Veiculo:</label>
                             <select class="form-control form-control-lg" name="veiculo_id" id="veiculo_id" class="form-control">
+                                <option value="veiculo">Selecione um Veiculo</option>
                                 @foreach ($veiculos as $veiculo)
                                 <option value="{{ $veiculo->id }}" valor="{{ $veiculo->valor }}">{{ $veiculo->modelo }} - R$ {{ $veiculo->valor }}</option>
                                 @endforeach
